@@ -1,0 +1,17 @@
+{% extends 'bookstore/index.html'%}
+{% block content %}
+    {% if has_author_param %}
+        <a href="/books">
+            All books
+        </a>
+    {% endif %}
+
+    {% for book in books %}
+        <div>
+            <h1>
+                <a href="/books/{{book.id}}">{{book.title}}</a> ({{book.released_year}})
+            </h1>
+            <p>{{book.description|slice:":150"}}</p>
+        </div>
+    {% endfor %}
+{% endblock content %}

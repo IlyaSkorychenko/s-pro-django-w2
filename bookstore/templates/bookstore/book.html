@@ -1,0 +1,11 @@
+{% extends 'bookstore/index.html'%}
+{% block content %}
+    <div>
+        <h1>
+            {{book.title}} ({{book.released_year}})
+        </h1>
+        <p>{{book.description}}</p>
+        <a href="/authors/{{book.author_id}}">See author</a>
+        <a href="/books">Back</a>
+    </div>
+{% endblock content %}
